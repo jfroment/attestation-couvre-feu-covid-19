@@ -1,6 +1,6 @@
 {
   "name": "attestation-couvre-feu-covid-19",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "description": "Générateur d'attestation de déplacement dérogatoire'",
   "main": "certificate.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "prebuild": "run-s lint clean:dist",
     "build:simple": "cross-env-shell parcel build --public-url $PUBLIC_URL ./src/index.html ./src/robots.txt ./src/sitemap.xml",
     "build": "npm run build:dev",
+    "gcp-build": "npm i && npm run build:simple",
     "postbuild": "cross-env-shell react-snap",
     "build:dev": "cross-env PUBLIC_URL='/' npm run build:simple",
     "preserve": "npm run build",
